@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:slice_ui_whatsapp/pages/chats_page.dart';
 
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -22,6 +21,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
 
 class MyPagesView extends StatefulWidget {
   const MyPagesView({super.key});
