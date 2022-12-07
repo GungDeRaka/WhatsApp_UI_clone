@@ -1,16 +1,6 @@
-# slice_ui_whatsapp
+# WhatsApp UI Clone
 
-A new Flutter project.
+I made this project for my own excercise,
+i'm trying to figure out how to display some data with class as a blueprint which store some data and also create some mapping list to store my other data (you can see these data in "models" folder)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+fyi, i'm just a college student tryna learn to code and learn english (i'm indonesian btw), so feel free to fix my code and my english

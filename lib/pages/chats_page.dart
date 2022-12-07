@@ -11,7 +11,7 @@ class MyChatsPage extends StatelessWidget {
         children: myChatsHistory.map((chatData) {
           return SizedBox(
               child: ListTile(
-                horizontalTitleGap: 0,
+            horizontalTitleGap: 0,
             title: Text(
               chatData["contactName"].toString(),
               style:
@@ -26,7 +26,17 @@ class MyChatsPage extends StatelessWidget {
             contentPadding: const EdgeInsets.symmetric(horizontal: 4),
             onTap: () {},
             leading: CircleAvatar(
-                radius: 50, backgroundImage: chatData["profileIMage"]),
+              radius: 50,
+              backgroundColor: Colors.grey[400],
+              child: const Padding(
+                padding: EdgeInsets.only(top: 8),
+                child: Icon(
+                  Icons.person_rounded,
+                  size: 48.0,
+                  color: Colors.white,
+                ),
+              ),
+            ),
             trailing: Text(
               chatData["sentOn"].toString(),
               style: const TextStyle(
@@ -36,10 +46,7 @@ class MyChatsPage extends StatelessWidget {
           ));
         }).toList(),
       ),
-      floatingActionButton: 
-      
-      FloatingActionButton(
-        
+      floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.chat),
         onPressed: () {
           //

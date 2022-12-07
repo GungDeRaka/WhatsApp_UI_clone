@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:slice_ui_whatsapp/pages/chats_page.dart';
+import 'package:slice_ui_whatsapp/pages/status_page.dart';
 
 
 void main() {
@@ -102,12 +103,7 @@ class _MyPagesViewState extends State<MyPagesView> {
             ),
           ),
           MyChatsPage(),
-          Center(
-            child: Text(
-              "StatusPage",
-              style: TextStyle(fontSize: 28),
-            ),
-          ),
+          StatusPage(),
           Center(
             child: Text(
               "CallsPage",
