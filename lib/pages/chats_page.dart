@@ -9,7 +9,7 @@ class MyChatsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: const EdgeInsets.only(top: 8) ,
+        padding: const EdgeInsets.only(top: 8,right: 12) ,
         children: myChatsHistory.map((chatData) {
           return VersatileListTile(
               leadingTile: CircleAvatar(

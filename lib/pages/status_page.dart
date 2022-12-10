@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:slice_ui_whatsapp/model/chats_history.dart';
 import 'package:slice_ui_whatsapp/widgets/versatile_listtile.dart';
-
-
 
 class StatusPage extends StatelessWidget {
   const StatusPage({super.key});
@@ -12,34 +11,67 @@ class StatusPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.only(top: 8),
         children: [
-          VersatileListTile(
-              leadingTile: Stack(
-                alignment: AlignmentDirectional.bottomEnd,
-                children: const [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundImage: AssetImage(
-                      "assets/profile_picture1.jpg",
+          Padding(
+            padding: const EdgeInsets.only(left: 8),
+            child: VersatileListTile(
+                leadingTile: Stack(
+                  alignment: AlignmentDirectional.bottomEnd,
+                  children: const [
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage(
+                        "assets/profile_picture1.jpg",
+                      ),
+                    ),
+                    Positioned(
+                      right: 12,
+                      bottom: 1,
+                      child: CircleAvatar(
+                        radius: 12,
+                        child: Icon(
+                          Icons.add,
+                          size: 16,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                tileTitle: "My Status",
+                tileSubtitle: "Tap to add status update"),
+          ),
+          const SizedBox(
+            height: 4,
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 16),
+            child: Text(
+              "Viewed updates",
+              style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black45),
+            ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: myChatsHistory.map((status) {
+              return VersatileListTile(
+                  leadingTile: CircleAvatar(
+                    radius: 50,
+                    backgroundColor: Colors.grey[400],
+                    child: const Padding(
+                      padding: EdgeInsets.only(top: 8),
+                      child: Icon(
+                        Icons.person_rounded,
+                        size: 48.0,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
-                  Positioned(
-                    right: 12,
-                    bottom: 1,
-                    child: CircleAvatar(
-                      child: Icon(
-                        Icons.add,
-                        size: 16,
-                      ),
-                      radius: 12,
-                    ),
-                  )
-                ],
-              ),
-              tileTitle: "My Status",
-              tileSubtitle: "Tap to add status update"),
-          SizedBox(
-            height: 12,
-          ),
+                  tileTitle: status["contactName"].toString(),
+                  tileSubtitle: status["statusUploadedWhen"].toString());
+            }).toList(),
+          )
         ],
       ),
       floatingActionButton: Column(
@@ -53,7 +85,7 @@ class StatusPage extends StatelessWidget {
               //
             },
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           FloatingActionButton(

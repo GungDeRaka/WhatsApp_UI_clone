@@ -18,7 +18,7 @@ class VersatileListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: const EdgeInsets.only(right: 12,left: 2,),
+      contentPadding: const EdgeInsets.all(0),
       onTap: () {},
       horizontalTitleGap: 0,
       leading: leadingTile,
