@@ -13,7 +13,7 @@ class MyChatsPage extends StatelessWidget {
         children: myChatsHistory.map((chatData) {
           return VersatileListTile(
               leadingTile: CircleAvatar(
-                radius: 50,
+                radius: 40,
                 backgroundColor: Colors.grey[400],
                 child: const Padding(
                   padding: EdgeInsets.only(top: 8),
@@ -25,7 +25,11 @@ class MyChatsPage extends StatelessWidget {
                 ),
               ),
               tileTitle: chatData["contactName"].toString(),
-              tileSubtitle: chatData["latestChat"].toString(),
+              tileSubtitle: Text(chatData["latestChat"].toString(),
+              style: const TextStyle(
+              fontSize: 14.0,
+              ),
+              ),
               trailingTile: Text(
               chatData["sentOn"].toString(),
               style: const TextStyle(
@@ -34,47 +38,7 @@ class MyChatsPage extends StatelessWidget {
             ),);
         }).toList(),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.chat),
-        onPressed: () {
-          //
-        },
-      ),
+      
     );
   }
 }
-// ListTile(
-//             contentPadding: const EdgeInsets.symmetric(horizontal: 2),
-//             onTap: () {},
-//             horizontalTitleGap: 0,
-//             title: Text(
-//               chatData["contactName"].toString(),
-//               style:
-//                   const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-//             ),
-//             subtitle: Text(
-//               chatData["latestChat"].toString(),
-//               style: const TextStyle(
-//                 fontSize: 12.0,
-//               ),
-//             ),
-            
-//             leading: CircleAvatar(
-//               radius: 50,
-//               backgroundColor: Colors.grey[400],
-//               child: const Padding(
-//                 padding: EdgeInsets.only(top: 8),
-//                 child: Icon(
-//                   Icons.person_rounded,
-//                   size: 48.0,
-//                   color: Colors.white,
-//                 ),
-//               ),
-//             ),
-//             trailing: Text(
-//               chatData["sentOn"].toString(),
-//               style: const TextStyle(
-//                 fontSize: 10.0,
-//               ),
-//             ),
-//           );
