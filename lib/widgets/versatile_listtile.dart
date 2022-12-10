@@ -5,34 +5,28 @@ class VersatileListTile extends StatelessWidget {
   final Widget leadingTile;
   final Widget? trailingTile;
   final String tileTitle;
-  final String tileSubtitle;
+  final Widget? tileSubtitle;
 
   const VersatileListTile({
     Key? key,
     required this.leadingTile,
     this.trailingTile,
     required this.tileTitle,
-    required this.tileSubtitle,
+    this.tileSubtitle,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: const EdgeInsets.all(0),
-      onTap: () {},
-      horizontalTitleGap: 0,
-      leading: leadingTile,
-      trailing: trailingTile,
-      title: Text(
-        tileTitle,
-        style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-      ),
-      subtitle: Text(
-        tileSubtitle,
-        style: const TextStyle(
-          fontSize: 12.0,
+        contentPadding: const EdgeInsets.all(0),
+        onTap: () {},
+        horizontalTitleGap: 0,
+        leading: leadingTile,
+        trailing: trailingTile,
+        title: Text(
+          tileTitle,
+          style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
         ),
-      ),
-    );
+        subtitle: tileSubtitle);
   }
 }
