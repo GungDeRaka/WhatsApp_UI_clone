@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:slice_ui_whatsapp/pages/community_page.dart';
+import 'pages/community_page.dart';
 import 'pages/calls_page.dart';
 import 'pages/chats_page.dart';
 import 'pages/status_page.dart';
